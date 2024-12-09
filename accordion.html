@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+</head>
+<body class="mx-auto p-4">
+  <div x-data="{ selected: null }" class="accordion w-full flex flex-col gap-2">
+    <div class="accordion-item rounded-xl  bg-blue-400">
+      <div
+        x-on:click="selected = selected === 1 ? null : 1"
+        class="accordion-header p-5 flex items-center justify-between">
+        <span class="title text-xl">Accordion</span>
+        <svg data-accordion-icon class="w-4 h-4 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+        </svg>
+      </div>
+      <div 
+        x-show="selected === 1"
+        class="accordion-content p-5 overflow-hidden">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos nobis repudiandae totam, ratione, fugiat consequuntur blanditiis hic eaque quae laudantium et quasi temporibus at! Soluta laborum rem cumque velit veniam.
+      </div>
+    </div>
+    <div class="accordion-item rounded-xl  bg-blue-400">
+      <div
+        x-on:click="selected = selected === 2 ? null : 2"
+        class="accordion-header p-5 flex items-center justify-between">
+        <span class="title text-xl">Accordion</span>
+        <svg data-accordion-icon class="w-4 h-4 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+        </svg>
+      </div>
+      <div 
+        x-show="selected === 2"
+        class="accordion-content p-5 overflow-hidden">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos nobis repudiandae totam, ratione, fugiat consequuntur blanditiis hic eaque quae laudantium et quasi temporibus at! Soluta laborum rem cumque velit veniam.
+      </div>
+    </div>
+    <div class="accordion-item rounded-xl  bg-blue-400">
+      <div
+        x-on:click="selected = selected === 3 ? null : 3"
+        class="accordion-header p-5 flex items-center justify-between">
+        <span class="title text-xl">Accordion</span>
+        <svg data-accordion-icon class="w-4 h-4 rotate-180 shrink-0" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+        </svg>
+      </div>
+      <div 
+        x-show="selected === 3"
+        class="accordion-content p-5 overflow-hidden">
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos nobis repudiandae totam, ratione, fugiat consequuntur blanditiis hic eaque quae laudantium et quasi temporibus at! Soluta laborum rem cumque velit veniam.
+      </div>
+    </div>
+  </div>
+</body>
+</html>
