@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.accordion{
+  @apply flex flex-col gap-2;
+}
+
+.accordion-header{
+  @apply p-4 flex items-center justify-between;
+}
+
+.title{
+  @apply text-xl font-medium;
+}
