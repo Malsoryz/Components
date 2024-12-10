@@ -1,47 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.1/css/all.min.css" integrity="sha512-5Hs3dF2AEPkpNAR7UiOHba+lRSJNeM2ECkwxUIxC1Q/FLycGTbNapWXB4tP889k5T5Ju8fs4b1P5z/iB4nMfSQ==" crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer ></script>
 </head>
-<body class="mx-auto p-2">
-  <div x-data="{ items: data }" class="accordion w-full text-white">
-    <template x-for="(item, index) in items" :key="index">
-      <div x-data="{ isOpen: false }" class="accordion-item rounded-xl overflow-hidden">
-        <div
-          x-on:click="isOpen = !isOpen"
-          class="accordion-header bg-blue-400">
-          <span x-text="item.title" class="title"></span>
-          <svg x-bind:class="isOpen ? 'rotate-180' : 'rotate-0'" data-accordion-icon class="w-3 h-3 shrink-0 duration-100" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
-            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
-          </svg>
+<body class="mx-auto p-2 grid gap-2">
+    <h1>Component</h1>
+    <div class="accordion w-full p-2 rounded-2xl bg-zinc-400 text-white">
+        <div class="accordion-item rounded-xl overflow-hidden">
+            <button type="button" class="accordion-header bg-blue-400">
+                <span class="title">Title</span>
+                <svg class="w-3 h-3 shrink-0 duration-100" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                </svg>
+            </button>
+            <div class="accordion-body bg-blue-300">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore ipsum corrupti enim tempore aperiam provident tenetur, debitis soluta totam? Iure deserunt explicabo fugiat minima dicta corrupti ad temporibus a reprehenderit.
+            </div>
         </div>
-        <div 
-          x-show="isOpen"
-          x-transition:enter="transition ease-out duration-100 transform"
-          x-transition:enter-start="h-0"
-          x-transition:enter-end="h-auto"
-          x-text="item.content"
-          class="accordion-content p-4 bg-blue-300">
+    </div>
+
+    <hr>
+
+    <h1>With Alpine.js</h1>
+    <div class="accordion w-full p-2 rounded-2xl bg-zinc-400 text-white">
+        <div x-data="{ isOpen: true }" class="accordion-item rounded-xl overflow-hidden">
+            <button type="button" x-on:click="isOpen = !isOpen" class="accordion-header bg-blue-400">
+                <span class="title">Title</span>
+                <svg x-bind:class="isOpen ? 'rotate-0' : 'rotate-180'" data-accordion-icon class="w-3 h-3 shrink-0 duration-100" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 10 6">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5 5 1 1 5"/>
+                </svg>
+            </button>
+            <div x-show="isOpen" class="accordion-body bg-blue-300">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolore ipsum corrupti enim tempore aperiam provident tenetur, debitis soluta totam? Iure deserunt explicabo fugiat minima dicta corrupti ad temporibus a reprehenderit.
+            </div>
         </div>
-      </div>
-    </template>
-  </div>
-  <script>
-    const data = [
-      {
-        title: "Title 1",
-        content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos nobis repudiandae totam, ratione, fugiat consequuntur blanditiis hic eaque quae laudantium et quasi temporibus at! Soluta laborum rem cumque velit veniam."
-      },
-      {
-        title: "Title 2",
-        content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos nobis repudiandae totam, ratione, fugiat consequuntur blanditiis hic eaque quae laudantium et quasi temporibus at! Soluta laborum rem cumque velit veniam."
-      }
-    ];
-  </script>
+    </div>
 </body>
 </html>

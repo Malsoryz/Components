@@ -2,14 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-.accordion{
-  @apply flex flex-col gap-2;
+.accordion {
+	@apply flex flex-col gap-1;
 }
 
-.accordion-header{
-  @apply p-4 flex items-center justify-between;
+.accordion-header {
+	@apply w-full py-3 px-4 flex flex-row items-center justify-between;
 }
 
-.title{
-  @apply text-xl font-medium;
+.accordion-body {
+	@apply py-3 px-4;
+}
+
+.title {
+	@apply text-xl font-medium;
 }
