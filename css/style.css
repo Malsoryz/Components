@@ -107,7 +107,7 @@
 }
 
 /*
-! tailwindcss v3.4.16 | MIT License | https://tailwindcss.com
+! tailwindcss v3.4.14 | MIT License | https://tailwindcss.com
 */
 
 /*
@@ -567,10 +567,6 @@ video {
   display: grid;
 }
 
-.hidden {
-  display: none;
-}
-
 .h-3 {
   height: 0.75rem;
 }
@@ -597,16 +593,16 @@ video {
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
 }
 
-.flex-row {
-  flex-direction: row;
-}
-
 .flex-col {
   flex-direction: column;
 }
 
 .gap-2 {
   gap: 0.5rem;
+}
+
+.gap-y-0\.5 {
+  row-gap: 0.125rem;
 }
 
 .overflow-hidden {
@@ -621,28 +617,68 @@ video {
   border-radius: 0.75rem;
 }
 
+.border {
+  border-width: 1px;
+}
+
+.border-t {
+  border-top-width: 1px;
+}
+
+.border-gray-300 {
+  --tw-border-opacity: 1;
+  border-color: rgb(209 213 219 / var(--tw-border-opacity));
+}
+
 .bg-blue-300 {
   --tw-bg-opacity: 1;
-  background-color: rgb(147 197 253 / var(--tw-bg-opacity, 1));
+  background-color: rgb(147 197 253 / var(--tw-bg-opacity));
 }
 
 .bg-blue-400 {
   --tw-bg-opacity: 1;
-  background-color: rgb(96 165 250 / var(--tw-bg-opacity, 1));
+  background-color: rgb(96 165 250 / var(--tw-bg-opacity));
 }
 
 .bg-zinc-400 {
   --tw-bg-opacity: 1;
-  background-color: rgb(161 161 170 / var(--tw-bg-opacity, 1));
+  background-color: rgb(161 161 170 / var(--tw-bg-opacity));
+}
+
+.bg-gray-100 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 244 246 / var(--tw-bg-opacity));
 }
 
 .p-2 {
   padding: 0.5rem;
 }
 
+.p-4 {
+  padding: 1rem;
+}
+
 .text-white {
   --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+.shadow-sm {
+  --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-md {
+  --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-xl {
+  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 
 .duration-100 {
