@@ -1,3 +1,129 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.btn-danger {
+    @apply bg-red-500 text-red-50;
+}
+.btn-danger:hover {
+    @apply bg-red-600;
+}
+.all-danger,.bg-danger { 
+    @apply bg-red-100;
+}
+.all-danger:hover,.bg-danger:hover {
+    @apply hover:bg-red-200;
+}
+.all-danger,.text-danger {
+    @apply text-red-800;
+}
+.all-danger,.border-danger {
+    @apply border-red-400;
+}
+.all-danger,.fill-danger {
+    @apply fill-red-800;
+}
+
+.btn-warning {
+    @apply bg-yellow-500 text-yellow-950;
+}
+.btn-warning:hover {
+    @apply bg-yellow-600;
+}
+.all-warning,.bg-warning {
+    @apply bg-yellow-100;
+}
+.all-warning:hover,.bg-warning:hover {
+    @apply hover:bg-yellow-200;
+}
+.all-warning,.text-warning {
+    @apply text-yellow-800;
+}
+.all-warning,.border-warning {
+    @apply border-yellow-400;
+}
+.all-warning,.fill-warning {
+    @apply fill-yellow-800;
+}
+
+.btn-success {
+    @apply bg-green-500 text-green-50;
+}
+.btn-success:hover {
+    @apply bg-green-600;
+}
+.all-success,.bg-success {
+    @apply bg-green-100;
+}
+.all-success:hover,.bg-success:hover {
+    @apply hover:bg-green-200;
+}
+.all-success,.text-success {
+    @apply text-green-800;
+}
+.all-success,.border-success { 
+    @apply border-green-400;
+}
+.all-success,.fill-success {
+    @apply fill-green-800;
+}
+
+.btn-info {
+    @apply bg-blue-500 text-blue-50;
+}
+.btn-info:hover {
+    @apply bg-blue-600;
+}
+.all-info,.bg-info {
+    @apply bg-blue-100;
+}
+.all-info:hover,.bg-info:hover {
+    @apply hover:bg-blue-200;
+}
+.all-info,.text-info {
+    @apply text-blue-800;
+}
+.all-info,.border-info { 
+    @apply border-blue-400;
+}
+.all-info,.fill-info {
+    @apply fill-blue-800;
+}
+
+.btn-neutral {
+    @apply bg-gray-500 text-gray-50;
+}
+.btn-neutral:hover {
+    @apply bg-gray-600;
+}
+.all-neutral,.bg-neutral {
+    @apply bg-gray-100;
+}
+.all-neutral:hover,.bg-neutral:hover {
+    @apply hover:bg-gray-200;
+}
+.all-neutral,.text-neutral {
+    @apply text-gray-800;
+}
+.all-neutral,.border-neutral { 
+    @apply border-gray-400;
+}
+.all-neutral,.fill-neutral {
+    @apply fill-gray-800;
+}
+
+.accordion,.alert {
+    @apply flex flex-col gap-y-1;
+}
+
+.accordion-item .accordion-header {
+    @apply w-full py-3 px-4 flex flex-row items-center justify-between;
+}
+
+.accordion-item .accordion-header .title {
+    @apply text-xl font-medium;
+}
+
+.accordion-item .accordion-body {
+    @apply py-3 px-4;
+}
