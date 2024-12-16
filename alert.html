@@ -8,72 +8,106 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer ></script>
 </head>
-<body class="mx-auto p-4">
+<body class="mx-auto p-4 flex flex-col gap-2">
     <h1 class="text-2xl">Alert</h1><br>
-    <div class="alert">
-        <div x-data class="alert-item all-success py-3 px-4 flex items-center justify-between rounded-xl border">
-            <div class="alert-type flex items-center gap-2">
-                <svg class="w-4 h-4 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 512">
-                    <path d="M96 64c0-17.7-14.3-32-32-32S32 46.3 32 64l0 256c0 17.7 14.3 32 32 32s32-14.3 32-32L96 64zM64 480a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"/>
-                </svg>
-                <span class="alert-title">Success</span>
-            </div>
-            <button type="button" @click="$el.closest('.alert-item').remove()">
-                <svg class="w-4 h-4 fill-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-                    <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
-                </svg>
+    <!-- alert item -->
+    <div x-data class="alert flex all-success overflow-hidden rounded-md border">
+        <div class="alert-icon flex items-center p-3">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            </svg>              
+        </div>
+        <div class="alert-message flex flex-col p-1 w-full">
+            <h1 class="message-header text-xl font-medium">Success</h1>
+            <span class="message-content text-sm">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque repellendus reiciendis a enim velit odio facilis eius ea iusto minus, neque necessitatibus ratione, dolor laborum? Incidunt dolore reprehenderit autem neque?
+            </span>
+        </div>
+        <div class="btn-close flex items-center p-2">
+            <button @click="$el.closest('.alert').remove()" type="button" class="p-1 rounded-full hover:bg-green-300">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                  </svg>                  
             </button>
         </div>
-        <div x-data class="alert-item all-warning py-3 px-4 flex items-center justify-between rounded-xl border">
-            <div class="alert-type flex items-center gap-2">
-                <svg class="w-4 h-4 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 512">
-                    <path d="M96 64c0-17.7-14.3-32-32-32S32 46.3 32 64l0 256c0 17.7 14.3 32 32 32s32-14.3 32-32L96 64zM64 480a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"/>
-                </svg>
-                <span class="alert-title">Warning</span>
-            </div>
-            <button type="button" @click="$el.closest('.alert-item').remove()">
-                <svg class="w-4 h-4 fill-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-                    <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
-                </svg>
+    </div>
+    <div x-data class="alert flex all-warning overflow-hidden rounded-md border">
+        <div class="alert-icon flex items-center p-3">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126ZM12 15.75h.007v.008H12v-.008Z" />
+            </svg>
+        </div>
+        <div class="alert-message flex flex-col p-1 w-full">
+            <h1 class="message-header text-xl font-medium">Warning</h1>
+            <span class="message-content text-sm">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque repellendus reiciendis a enim velit odio facilis eius ea iusto minus, neque necessitatibus ratione, dolor laborum? Incidunt dolore reprehenderit autem neque?
+            </span>
+        </div>
+        <div class="btn-close flex items-center p-2">
+            <button @click="$el.closest('.alert').remove()" type="button" class="p-1 rounded-full hover:bg-yellow-300">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                  </svg>                  
             </button>
         </div>
-        <div x-data class="alert-item all-danger py-3 px-4 flex items-center justify-between rounded-xl border">
-            <div class="alert-type flex items-center gap-2">
-                <svg class="w-4 h-4 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 512">
-                    <path d="M96 64c0-17.7-14.3-32-32-32S32 46.3 32 64l0 256c0 17.7 14.3 32 32 32s32-14.3 32-32L96 64zM64 480a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"/>
-                </svg>
-                <span class="alert-title">Danger</span>
-            </div>
-            <button type="button" @click="$el.closest('.alert-item').remove()">
-                <svg class="w-4 h-4 fill-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-                    <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
-                </svg>
+    </div>
+    <div x-data class="alert flex all-danger overflow-hidden rounded-md border">
+        <div class="alert-icon flex items-center p-3">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m9-.75a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 3.75h.008v.008H12v-.008Z" />
+            </svg>
+        </div>
+        <div class="alert-message flex flex-col p-1 w-full">
+            <h1 class="message-header text-xl font-medium">Danger</h1>
+            <span class="message-content text-sm">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque repellendus reiciendis a enim velit odio facilis eius ea iusto minus, neque necessitatibus ratione, dolor laborum? Incidunt dolore reprehenderit autem neque?
+            </span>
+        </div>
+        <div class="btn-close flex items-center p-2">
+            <button @click="$el.closest('.alert').remove()" type="button" class="p-1 rounded-full hover:bg-red-300">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                  </svg>                  
             </button>
         </div>
-        <div x-data class="alert-item all-info py-3 px-4 flex items-center justify-between rounded-xl border">
-            <div class="alert-type flex items-center gap-2">
-                <svg class="w-4 h-4 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 512">
-                    <path d="M96 64c0-17.7-14.3-32-32-32S32 46.3 32 64l0 256c0 17.7 14.3 32 32 32s32-14.3 32-32L96 64zM64 480a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"/>
-                </svg>
-                <span class="alert-title">Info</span>
-            </div>
-            <button type="button" @click="$el.closest('.alert-item').remove()">
-                <svg class="w-4 h-4 fill-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-                    <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
-                </svg>
+    </div>
+    <div x-data class="alert flex all-info overflow-hidden rounded-md border">
+        <div class="alert-icon flex items-center p-3">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z" />
+            </svg>
+        </div>
+        <div class="alert-message flex flex-col p-1 w-full">
+            <h1 class="message-header text-xl font-medium">Info</h1>
+            <span class="message-content text-sm">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque repellendus reiciendis a enim velit odio facilis eius ea iusto minus, neque necessitatibus ratione, dolor laborum? Incidunt dolore reprehenderit autem neque?
+            </span>
+        </div>
+        <div class="btn-close flex items-center p-2">
+            <button @click="$el.closest('.alert').remove()" type="button" class="p-1 rounded-full hover:bg-blue-300">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                  </svg>                  
             </button>
         </div>
-        <div x-data class="alert-item all-neutral py-3 px-4 flex items-center justify-between rounded-xl border">
-            <div class="alert-type flex items-center gap-2">
-                <svg class="w-4 h-4 shrink-0" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 512">
-                    <path d="M96 64c0-17.7-14.3-32-32-32S32 46.3 32 64l0 256c0 17.7 14.3 32 32 32s32-14.3 32-32L96 64zM64 480a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"/>
-                </svg>
-                <span class="alert-title">Neutral</span>
-            </div>
-            <button type="button" @click="$el.closest('.alert-item').remove()">
-                <svg class="w-4 h-4 fill-black" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
-                    <path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
-                </svg>
+    </div>
+    <div x-data class="alert flex all-neutral overflow-hidden rounded-md border">
+        <div class="alert-icon flex items-center p-3">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14.857 17.082a23.848 23.848 0 0 0 5.454-1.31A8.967 8.967 0 0 1 18 9.75V9A6 6 0 0 0 6 9v.75a8.967 8.967 0 0 1-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 0 1-5.714 0m5.714 0a3 3 0 1 1-5.714 0" />
+            </svg>              
+        </div>
+        <div class="alert-message flex flex-col p-1 w-full">
+            <h1 class="message-header text-xl font-medium">Neutral</h1>
+            <span class="message-content text-sm">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque repellendus reiciendis a enim velit odio facilis eius ea iusto minus, neque necessitatibus ratione, dolor laborum? Incidunt dolore reprehenderit autem neque?
+            </span>
+        </div>
+        <div class="btn-close flex items-center p-2">
+            <button @click="$el.closest('.alert').remove()" type="button" class="p-1 rounded-full hover:bg-gray-300">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18 18 6M6 6l12 12" />
+                  </svg>                  
             </button>
         </div>
     </div>
