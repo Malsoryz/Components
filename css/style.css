@@ -794,7 +794,7 @@ video {
   fill: #1f2937;
 }
 
-.accordion,.alert {
+.accordion {
   display: flex;
   flex-direction: column;
   row-gap: 0.25rem;

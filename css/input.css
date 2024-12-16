@@ -112,7 +112,7 @@
     @apply fill-gray-800;
 }
 
-.accordion,.alert {
+.accordion {
     @apply flex flex-col gap-y-1;
 }
 
